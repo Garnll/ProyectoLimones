@@ -52,7 +52,7 @@ public class Item : MonoBehaviour {
 
         transform.position = spawnPoint.transform.position;
 
-        rb2d.AddForce(transform.right * thowForce);
+        rb2d.AddForce(spawnPoint.transform.right * thowForce);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

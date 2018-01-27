@@ -90,16 +90,16 @@ public class Player : PhysicsObject {
 
         if (move.x > 0.01f)
         {
-            if (spriteRenderer.flipX == true)
+            if (transform.rotation.y >= 1 || transform.rotation.y <= -1)
             {
-                spriteRenderer.flipX = false;
+                transform.rotation = new Quaternion(transform.rotation.x, 0, transform.rotation.z, transform.rotation.w);
             }
         }
         else if (move.x < -0.01f)
         {
-            if (spriteRenderer.flipX == false)
+            if (transform.rotation.y < 1 && transform.rotation.y > -1)
             {
-                spriteRenderer.flipX = true;
+                transform.rotation = new Quaternion(transform.rotation.x, 180, transform.rotation.z, transform.rotation.w);
             }
         }
 
@@ -116,7 +116,7 @@ public class Player : PhysicsObject {
             return;
 
         int layerMask = 1 << LayerMask.NameToLayer("Items");
-        float circleRadius = 2;
+        float circleRadius = 1;
 
         Collider2D itemCollider = Physics2D.OverlapCircle(transform.position, circleRadius, layerMask);
         if (itemCollider != null)
