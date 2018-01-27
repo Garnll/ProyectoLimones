@@ -68,7 +68,10 @@ public class Player : PhysicsObject {
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
-            Jump();
+            if (currentBoxUsed == null)
+            {
+                Jump();
+            }
         }
         else if (Input.GetButtonUp("Jump"))
         {
@@ -80,11 +83,8 @@ public class Player : PhysicsObject {
 
         Move(move);
 
-        if (!itemOnHand)
-        {
-            animator.SetBool("grounded", grounded);
-            animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / currentVelocity);
-        }
+        animator.SetBool("grounded", grounded);
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / currentVelocity);
     }
 
     private void Jump()
@@ -142,6 +142,9 @@ public class Player : PhysicsObject {
                 //Aqui se coge la caja
 
                 itemOnHand = true;
+
+                animator.SetInteger("taking", currentBoxUsed.itemType);
+
                 return;
             }
 
@@ -157,6 +160,7 @@ public class Player : PhysicsObject {
             currentVelocity = maxVelocity - currentPoolUsed.mass/2;
             itemOnHand = true;
 
+            animator.SetInteger("taking", currentPoolUsed.itemType);
             //Aquí hará la animación de coger el item y quedarse con él
         }
         else
@@ -174,6 +178,7 @@ public class Player : PhysicsObject {
             return;
 
         //Aqui hará la animación de tirar el item
+        animator.SetTrigger("throw");
 
         if (currentBoxUsed == null)
         {
@@ -200,6 +205,8 @@ public class Player : PhysicsObject {
             CancelInvoke();
             hurt = true;
             hp--;
+            animator.SetTrigger("hurt");
+
 
             lifeFeedback.ReachRadius(hp, maxHp);
             lifeFeedback.Noise(0.2f, 0.2f);
@@ -221,7 +228,7 @@ public class Player : PhysicsObject {
         lifeFeedback.Noise(0f, 0f);
 
         //Aqui el jugador muere
-        Debug.Log("Player has died D:");
+        animator.SetBool("dead", dead);
     }
 
     private void Invulnerable(Color alpha)

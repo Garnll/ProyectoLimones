@@ -8,6 +8,8 @@ public class BoxItem : Item {
 
     [HideInInspector]
     public float mass;
+    [HideInInspector]
+    public int itemType = 3;
 
     protected override void Start()
     {

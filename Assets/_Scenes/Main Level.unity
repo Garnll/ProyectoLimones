@@ -172,6 +172,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4240103598869212, guid: 405a1c0ef1711f84a9976dcf1fc90f4c,
     type: 2}
   m_PrefabInternal: {fileID: 176731008}
+--- !u!114 &176731010 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114588807313011916, guid: 405a1c0ef1711f84a9976dcf1fc90f4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 176731008}
+  m_Script: {fileID: 11500000, guid: ccd19e8476b4fcb40982292dca66cf37, type: 3}
 --- !u!1001 &452780394
 Prefab:
   m_ObjectHideFlags: 0
@@ -211,6 +217,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212676605501482052, guid: 044231019fa0e8c43aff88191b09c65b,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212676605501482052, guid: 044231019fa0e8c43aff88191b09c65b,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212676605501482052, guid: 044231019fa0e8c43aff88191b09c65b,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95029426676073284, guid: 044231019fa0e8c43aff88191b09c65b,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5c1ab09d033ee5c44bcb3776eed0bba5, type: 2}
+    - target: {fileID: 114747857293080034, guid: 044231019fa0e8c43aff88191b09c65b,
+        type: 2}
+      propertyPath: lifeFeedback
+      value: 
+      objectReference: {fileID: 176731010}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 044231019fa0e8c43aff88191b09c65b, type: 2}
   m_IsPrefabParent: 0

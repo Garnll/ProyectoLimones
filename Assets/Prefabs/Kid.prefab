@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 70615175570333896}
   - component: {fileID: 114747857293080034}
   m_Layer: 10
-  m_Name: PannyPaxel
+  m_Name: Kid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   maxHp: 3
   maxVelocity: 7
   jumpTakeOffSpeed: 7
+  lifeFeedback: {fileID: 0}
 --- !u!212 &212676605501482052
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -231,7 +232,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2038305319
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300040, guid: 0540eeb6c369e1e499fc90e6880e6bce, type: 3}
   m_Color: {r: 1, g: 0.43382353, b: 0.43382353, a: 1}
