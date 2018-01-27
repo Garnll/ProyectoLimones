@@ -16,7 +16,8 @@ public class Player : PhysicsObject {
     private bool itemOnHand = false;
     private bool hurt = false;
 
-    private int itemType;
+    private ItemPool currentPoolUsed;
+
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -39,16 +40,16 @@ public class Player : PhysicsObject {
 
         Vector2 move = Vector2.zero;
 
+        if (Input.GetButtonDown("Fire1") && itemOnHand)
+        {
+            Throw();            
+        }
         if (Input.GetButtonDown("Fire1"))
         {
             if (!itemOnHand)
             {
                 PickUp();
             }
-        }
-        else if (Input.GetButtonUp("Fire1") && itemOnHand)
-        {
-            Throw();
         }
 
 
@@ -68,8 +69,11 @@ public class Player : PhysicsObject {
 
         Move(move);
 
-        animator.SetBool("grounded", grounded);
-        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / currentVelocity);
+        if (!itemOnHand)
+        {
+            animator.SetBool("grounded", grounded);
+            animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / currentVelocity);
+        }
     }
 
     private void Jump()
@@ -102,7 +106,10 @@ public class Player : PhysicsObject {
         targetVelocity = move * currentVelocity;
     }
 
-
+    /// <summary>
+    /// Crea un OverlapCircle que busca objetos con el layer "Items". 
+    /// Al encontrarlo lo guarda en una referencia y coge las propiedades de su Item correspondiente.
+    /// </summary>
     private void PickUp()
     {
         if (itemOnHand)
@@ -114,9 +121,16 @@ public class Player : PhysicsObject {
         Collider2D itemCollider = Physics2D.OverlapCircle(transform.position, circleRadius, layerMask);
         if (itemCollider != null)
         {
-            //itemType;
+            currentPoolUsed = itemCollider.GetComponent<ItemPool>();
+            if (!currentPoolUsed.ItemAvailable())
+            {
+                itemOnHand = false;
+                return;
+            }
 
-            //Hacer cosas referentes a coger el objeto, enviar a que el item haga algo
+            currentPoolUsed.GetItemProperties();
+
+            currentVelocity = maxVelocity - currentPoolUsed.mass/2;
             itemOnHand = true;
 
             //Aquí hará la animación de coger el item y quedarse con él
@@ -127,15 +141,21 @@ public class Player : PhysicsObject {
         }
     }
 
+    /// <summary>
+    /// Le dice a la currentItemPool que haga la función ThowItem.
+    /// </summary>
     private void Throw()
     {
-        if (itemOnHand)
-            itemOnHand = false;
-        else
+        if (!itemOnHand)
             return;
 
         //Aqui hará la animación de tirar el item
+
+        currentPoolUsed.ThowItem();
+
         currentVelocity = maxVelocity;
+
+        itemOnHand = false;
     }
 
     /// <summary>

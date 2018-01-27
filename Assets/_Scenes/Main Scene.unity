@@ -185,34 +185,11 @@ SpriteMask:
   m_FrontSortingOrder: 0
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 1
---- !u!1 &130620711
+--- !u!1 &130620711 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 130620712}
-  m_Layer: 13
-  m_Name: Respawner3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &130620712
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 130620711}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.13, y: 0.65, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1342429864}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_PrefabParentObject: {fileID: 1425462360620026, guid: 044231019fa0e8c43aff88191b09c65b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1342429863}
 --- !u!1 &171207496
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +200,8 @@ GameObject:
   - component: {fileID: 171207499}
   - component: {fileID: 171207498}
   - component: {fileID: 171207497}
-  m_Layer: 0
+  - component: {fileID: 171207500}
+  m_Layer: 8
   m_Name: pool2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,6 +290,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &171207500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 171207496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e8673c6cb637d4eb1b7712ad243697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 2018126265}
+  - {fileID: 2018126265}
+  - {fileID: 2018126265}
+  itemType: 2
+  mass: 0
 --- !u!1 &291695186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,7 +1169,7 @@ Transform:
   - {fileID: 496360491}
   - {fileID: 1371912122}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &840077017 stripped
 Transform:
@@ -1258,34 +1253,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &907800462
+--- !u!1 &907800462 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 907800463}
-  m_Layer: 13
-  m_Name: Respawner2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &907800463
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 907800462}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.14, y: 0.65, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1342429864}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_PrefabParentObject: {fileID: 1537036506142650, guid: 044231019fa0e8c43aff88191b09c65b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1342429863}
 --- !u!1001 &917416183
 Prefab:
   m_ObjectHideFlags: 0
@@ -1323,7 +1295,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4520396350849616, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 212064061491315838, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
         type: 2}
@@ -1395,7 +1367,7 @@ Transform:
   m_Children:
   - {fileID: 858344287}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1116659034
 GameObject:
@@ -1435,7 +1407,8 @@ GameObject:
   - component: {fileID: 1196141015}
   - component: {fileID: 1196141014}
   - component: {fileID: 1196141013}
-  m_Layer: 0
+  - component: {fileID: 1196141016}
+  m_Layer: 8
   m_Name: Pool3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1524,6 +1497,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1196141016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1196141012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e8673c6cb637d4eb1b7712ad243697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1766189931}
+  - {fileID: 1766189931}
+  - {fileID: 1766189931}
+  itemType: 3
+  mass: 0
 --- !u!1001 &1342429863
 Prefab:
   m_ObjectHideFlags: 0
@@ -1561,16 +1551,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4865961296680518, guid: 044231019fa0e8c43aff88191b09c65b, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 044231019fa0e8c43aff88191b09c65b, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1342429864 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4865961296680518, guid: 044231019fa0e8c43aff88191b09c65b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1342429863}
 --- !u!1 &1371912121
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,34 +2022,11 @@ Tilemap:
   m_TileRefreshArray:
   - serializedVersion: 1
     m_DirtyIndex: 0
---- !u!1 &1401035364
+--- !u!1 &1401035364 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1401035365}
-  m_Layer: 13
-  m_Name: Respawner1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1401035365
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1401035364}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.14, y: 0.6, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1342429864}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_PrefabParentObject: {fileID: 1973676009438388, guid: 044231019fa0e8c43aff88191b09c65b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1342429863}
 --- !u!1 &1448050480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,9 +2252,9 @@ GameObject:
   - component: {fileID: 1766189934}
   - component: {fileID: 1766189933}
   - component: {fileID: 1766189932}
-  - component: {fileID: 1766189931}
   - component: {fileID: 1766189930}
-  m_Layer: 0
+  - component: {fileID: 1766189931}
+  m_Layer: 9
   m_Name: bola3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2332,11 +2294,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1766189929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f59fd01bc9cfff49924bbf4a8e3d8be, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fc4b24dd0d91f64c8a4c6b37736ad3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerzaLanz: 750
-  ptoLanzamiento: {fileID: 1448050480}
+  thowForce: 700
+  spawnPoint: {fileID: 130620711}
+  onUse: 0
 --- !u!50 &1766189932
 Rigidbody2D:
   serializedVersion: 4
@@ -2424,7 +2387,8 @@ GameObject:
   - component: {fileID: 1863560934}
   - component: {fileID: 1863560933}
   - component: {fileID: 1863560932}
-  m_Layer: 0
+  - component: {fileID: 1863560935}
+  m_Layer: 8
   m_Name: Pool1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2513,6 +2477,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1863560935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1863560931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e8673c6cb637d4eb1b7712ad243697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1996949258}
+  - {fileID: 1996949258}
+  - {fileID: 1996949258}
+  itemType: 1
+  mass: 0
 --- !u!1 &1996949255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2522,10 +2503,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1996949260}
   - component: {fileID: 1996949259}
-  - component: {fileID: 1996949258}
   - component: {fileID: 1996949256}
   - component: {fileID: 1996949257}
-  m_Layer: 0
+  - component: {fileID: 1996949258}
+  m_Layer: 9
   m_Name: bola1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2547,7 +2528,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9932e91db9eba4f47842a9898c29da9b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -2592,11 +2573,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1996949255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f59fd01bc9cfff49924bbf4a8e3d8be, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fc4b24dd0d91f64c8a4c6b37736ad3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerzaLanz: 750
-  ptoLanzamiento: {fileID: 1116659034}
+  thowForce: 700
+  spawnPoint: {fileID: 1401035364}
+  onUse: 0
 --- !u!212 &1996949259
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2663,10 +2645,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2018126267}
   - component: {fileID: 2018126266}
-  - component: {fileID: 2018126265}
   - component: {fileID: 2018126264}
   - component: {fileID: 2018126268}
-  m_Layer: 0
+  - component: {fileID: 2018126265}
+  m_Layer: 9
   m_Name: Bola2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2688,7 +2670,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7a05efd0ef3244f4c840043bbe509fb4, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -2701,11 +2683,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2018126263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f59fd01bc9cfff49924bbf4a8e3d8be, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fc4b24dd0d91f64c8a4c6b37736ad3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerzaLanz: 750
-  ptoLanzamiento: {fileID: 349964781}
+  thowForce: 700
+  spawnPoint: {fileID: 907800462}
+  onUse: 0
 --- !u!212 &2018126266
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -10,7 +10,9 @@ public class Item : MonoBehaviour {
 
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb2d;
-    bool onUse = false;
+
+    [HideInInspector]
+    public bool onUse = false;
 
     private Vector3 nowhere;
 
@@ -36,9 +38,17 @@ public class Item : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Activa su gameobject, cambia su transform al de su spawnpoint, y le da una fuerza.
+    /// </summary>
     public void Throw()
     {
         gameObject.SetActive(true);
+        onUse = true;
+
+        Color alpha = spriteRenderer.color;
+        alpha.a = 1;
+        spriteRenderer.color = alpha;
 
         transform.position = spawnPoint.transform.position;
 
@@ -47,13 +57,13 @@ public class Item : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("golpeo aw");
+        //Debug.Log("golpeo aw");
     }
 
     private void Dissapear()
     {
         Color alpha = spriteRenderer.color;
-        int time = 2;
+        float time = 0.5f;
 
         alpha.a -= Time.deltaTime * time;
         spriteRenderer.color = alpha;
