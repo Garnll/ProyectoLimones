@@ -82,9 +82,7 @@ public class Player : PhysicsObject {
         }
 
         Move(move);
-
         animator.SetBool("grounded", grounded);
-        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / currentVelocity);
     }
 
     private void Jump()
@@ -115,6 +113,8 @@ public class Player : PhysicsObject {
         }
 
         targetVelocity = move * currentVelocity;
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / currentVelocity);
+        Debug.Log(Mathf.Abs(velocity.x) / currentVelocity);
     }
 
     /// <summary>
