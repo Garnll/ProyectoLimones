@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,9 +15,23 @@ public class LifeFeedback : MonoBehaviour {
 
     bool shrinking = false;
 
+
+    CinemachineVirtualCamera vcam;
+    CinemachineBasicMultiChannelPerlin noise;
+
     private void Start()
     {
         originalRadius = transform.localScale;
+
+        vcam = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
+        noise = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+    }
+
+
+    public void Noise(float amplitudeGain, float frequencyGain)
+    {
+        noise.m_AmplitudeGain = amplitudeGain;
+        noise.m_FrequencyGain = frequencyGain;
     }
 
     private void FixedUpdate()
@@ -24,6 +39,16 @@ public class LifeFeedback : MonoBehaviour {
         if (shrinking)
         {
             ReachRadius();
+            if (noise.m_AmplitudeGain > 0)
+            {
+                noise.m_AmplitudeGain -= Time.deltaTime * 2;
+                noise.m_FrequencyGain -= Time.deltaTime * 2;
+            }
+            else
+            {
+                noise.m_AmplitudeGain = 0;
+                noise.m_FrequencyGain = 0;
+            }
         }
     }
 

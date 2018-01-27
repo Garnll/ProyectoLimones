@@ -181,6 +181,7 @@ public class Player : PhysicsObject {
             hp--;
 
             lifeFeedback.ReachRadius(hp, maxHp);
+            lifeFeedback.Noise(0.2f, 0.2f);
 
             if (hp <= 0)
             {
@@ -196,6 +197,7 @@ public class Player : PhysicsObject {
     {
         CancelInvoke();
         dead = true;
+        lifeFeedback.Noise(0f, 0f);
 
         //Aqui el jugador muere
         Debug.Log("Player has died D:");
@@ -212,6 +214,7 @@ public class Player : PhysicsObject {
         alpha.a = 1;
 
         spriteRenderer.color = alpha;
+        lifeFeedback.Noise(0f, 0f);
 
         hurt = false;
     }
@@ -224,6 +227,7 @@ public class Player : PhysicsObject {
         hp++;
 
         lifeFeedback.ReachRadius(hp, maxHp);
+        lifeFeedback.Noise(0f, 0f);
 
         if (hp >= maxHp)
         {
