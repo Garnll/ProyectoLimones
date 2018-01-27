@@ -39,6 +39,7 @@ public class LifeFeedback : MonoBehaviour {
         if (shrinking)
         {
             ReachRadius();
+
             if (noise.m_AmplitudeGain > 0)
             {
                 noise.m_AmplitudeGain -= Time.deltaTime * 2;

@@ -20,7 +20,7 @@ public class Player : PhysicsObject {
     private bool dead = false;
 
     private ItemPool currentPoolUsed;
-
+    private BoxItem currentBoxUsed;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -55,7 +55,7 @@ public class Player : PhysicsObject {
         {
             Throw();            
         }
-        if (Input.GetButtonDown("Fire1"))
+        else if (Input.GetButtonDown("Fire1"))
         {
             if (!itemOnHand)
             {
@@ -132,6 +132,19 @@ public class Player : PhysicsObject {
         Collider2D itemCollider = Physics2D.OverlapCircle(transform.position, circleRadius, layerMask);
         if (itemCollider != null)
         {
+            if (itemCollider.GetComponent<BoxItem>())
+            {
+                currentBoxUsed = itemCollider.GetComponent<BoxItem>();
+                currentBoxUsed.GetBox();
+
+                currentVelocity = maxVelocity - currentBoxUsed.mass / 2;
+
+                //Aqui se coge la caja
+
+                itemOnHand = true;
+                return;
+            }
+
             currentPoolUsed = itemCollider.GetComponent<ItemPool>();
             if (!currentPoolUsed.ItemAvailable())
             {
@@ -162,7 +175,15 @@ public class Player : PhysicsObject {
 
         //Aqui hará la animación de tirar el item
 
-        currentPoolUsed.ThowItem();
+        if (currentBoxUsed == null)
+        {
+            currentPoolUsed.ThowItem();
+        }
+        else
+        {
+            currentBoxUsed.Throw();
+            currentBoxUsed = null;
+        }
 
         currentVelocity = maxVelocity;
 

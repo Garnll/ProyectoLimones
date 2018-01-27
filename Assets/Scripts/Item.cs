@@ -6,24 +6,24 @@ public class Item : MonoBehaviour {
 
     public float thowForce = 700f;
     [SerializeField]
-    private GameObject spawnPoint;
+    protected GameObject spawnPoint;
     [SerializeField]
-    private GameObject fader;
+    protected GameObject fader;
     [SerializeField]
-    private float radiusMultiplicator = 2;
+    protected float radiusMultiplicator = 2;
     [SerializeField]
-    private float radiusMinimum = 10;
+    protected float radiusMinimum = 10;
 
-    SpriteRenderer spriteRenderer;
-    Rigidbody2D rb2d;
+    protected SpriteRenderer spriteRenderer;
+    protected Rigidbody2D rb2d;
 
     [HideInInspector]
     public bool onUse = false;
 
-    private Vector3 nowhere;
+    protected Vector3 nowhere;
 
     // Use this for initialization
-    void Start()
+    protected virtual void Start()
     {
         nowhere = new Vector3(-900, -900, -900);
         transform.position = nowhere;
@@ -34,7 +34,7 @@ public class Item : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
-    public void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         if (rb2d.velocity.magnitude <= Mathf.Epsilon && onUse)
         {
@@ -45,7 +45,7 @@ public class Item : MonoBehaviour {
     /// <summary>
     /// Activa su gameobject, cambia su transform al de su spawnpoint, y le da una fuerza.
     /// </summary>
-    public void Throw()
+    public virtual void Throw()
     {
         gameObject.SetActive(true);
         onUse = true;
@@ -61,6 +61,11 @@ public class Item : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.collider.CompareTag("Player"))
+        {
+            return;
+        }
+
         float radiusFromVelocity = rb2d.velocity.sqrMagnitude * radiusMultiplicator;
         Debug.Log(radiusFromVelocity);
         if (radiusFromVelocity < radiusMinimum)
