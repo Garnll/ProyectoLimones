@@ -65,7 +65,7 @@ public class Item : MonoBehaviour {
         Debug.Log(radiusFromVelocity);
         if (radiusFromVelocity < radiusMinimum)
         {
-            radiusFromVelocity = radiusMinimum;
+            radiusFromVelocity = Random.Range(radiusMinimum - 1, radiusMinimum + 1);
         }
 
         GameObject newFader = Instantiate(fader, transform.position, transform.rotation) as GameObject;

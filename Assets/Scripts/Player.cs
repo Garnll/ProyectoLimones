@@ -10,11 +10,14 @@ public class Player : PhysicsObject {
     private float maxVelocity = 7;
     [SerializeField]
     private float jumpTakeOffSpeed = 7;
+    [SerializeField]
+    private LifeFeedback lifeFeedback;
 
     private int hp;
     private float currentVelocity;
     private bool itemOnHand = false;
     private bool hurt = false;
+    private bool dead = false;
 
     private ItemPool currentPoolUsed;
 
@@ -33,9 +36,17 @@ public class Player : PhysicsObject {
 
     protected override void ComputeVelocity()
     {
+        if (dead)
+        {
+            return;
+        }
+
         if (hurt)
         {
-            Invulnerable();
+            Color alpha = spriteRenderer.color;
+            alpha.a = Mathf.PingPong(Time.time * 5, 1);
+
+            Invulnerable(alpha);
         }
 
         Vector2 move = Vector2.zero;
@@ -163,11 +174,18 @@ public class Player : PhysicsObject {
     /// </summary>
     public void PlayerHurt()
     {
-        if (!hurt)
+        if (!hurt && !dead)
         {
             CancelInvoke();
             hurt = true;
             hp--;
+
+            lifeFeedback.ReachRadius(hp, maxHp);
+
+            if (hp <= 0)
+            {
+                PlayerDie();
+            }
 
             Invoke("InvulnerabilityOff", 1);
             Invoke("RegainHp", 2f);
@@ -176,14 +194,15 @@ public class Player : PhysicsObject {
 
     private void PlayerDie()
     {
+        CancelInvoke();
+        dead = true;
+
         //Aqui el jugador muere
+        Debug.Log("Player has died D:");
     }
 
-    private void Invulnerable()
+    private void Invulnerable(Color alpha)
     {
-        Color alpha = spriteRenderer.color;
-        alpha.a = Mathf.PingPong(alpha.a, 1);
-
         spriteRenderer.color = alpha;
     }
 
@@ -199,7 +218,12 @@ public class Player : PhysicsObject {
 
     private void RegainHp()
     {
+        if (dead)
+            return;
+
         hp++;
+
+        lifeFeedback.ReachRadius(hp, maxHp);
 
         if (hp >= maxHp)
         {
