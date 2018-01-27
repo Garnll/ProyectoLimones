@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class Item : MonoBehaviour {
 
-    public float thowForce = 0.02f;
+    public float thowForce = 700f;
     [SerializeField]
     private GameObject spawnPoint;
+    [SerializeField]
+    private GameObject fader;
+    [SerializeField]
+    private float radiusMultiplicator = 2;
+    [SerializeField]
+    private float radiusMinimum = 10;
 
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb2d;
@@ -15,8 +21,6 @@ public class Item : MonoBehaviour {
     public bool onUse = false;
 
     private Vector3 nowhere;
-
-    float maxProducedRadius = 2;
 
     // Use this for initialization
     void Start()
@@ -57,7 +61,16 @@ public class Item : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log("golpeo aw");
+        float radiusFromVelocity = rb2d.velocity.sqrMagnitude * radiusMultiplicator;
+        Debug.Log(radiusFromVelocity);
+        if (radiusFromVelocity < radiusMinimum)
+        {
+            radiusFromVelocity = radiusMinimum;
+        }
+
+        GameObject newFader = Instantiate(fader, transform.position, transform.rotation) as GameObject;
+        newFader.GetComponent<Fader>().CreateSelf(transform.position, radiusFromVelocity);
+
     }
 
     private void Dissapear()
