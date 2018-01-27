@@ -108,6 +108,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thowForce: 700
   spawnPoint: {fileID: 0}
+  fader: {fileID: 1396408296050756, guid: 5dcc45c573f90c74084970262ec60f52, type: 2}
+  radiusMultiplicator: 0.8
+  radiusMinimum: 8
   onUse: 0
 --- !u!212 &212714521596629988
 SpriteRenderer:
