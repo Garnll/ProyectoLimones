@@ -6,6 +6,13 @@ public class PlayerPlatformerController : PhysicsObject {
 
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
+    public int vida, maxVida;
+	public bool cargando;
+    public GameObject piedra1, piedra2, piedra3;
+	private float velocidad;
+    private int tipoRoca; 
+    // 1 = roca pequeña, 2 = roca mediana, 3 = roca grande
+
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -13,6 +20,7 @@ public class PlayerPlatformerController : PhysicsObject {
     // Use this for initialization
     void Awake () 
     {
+        cargando = false;
         spriteRenderer = GetComponent<SpriteRenderer> (); 
         animator = GetComponent<Animator> ();
     }
@@ -51,5 +59,23 @@ public class PlayerPlatformerController : PhysicsObject {
         animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);
 
         targetVelocity = move * maxSpeed;
+    }
+    public void Lanzar()
+    {
+        if (cargando == true)
+        {
+            switch (tipoRoca)
+            {
+                case 1:
+                    
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+            }
+        }
     }
 }
