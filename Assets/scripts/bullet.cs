@@ -9,10 +9,11 @@ public class bullet : MonoBehaviour {
     bool enUso;
     
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         transform.position = ptoLanzamiento.transform.position;
     
-    GetComponent<Rigidbody2D>().AddForce(transform.right * fuerzaLanz);
+        GetComponent<Rigidbody2D>().AddForce(transform.right * fuerzaLanz);
         
 	}
 	

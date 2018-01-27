@@ -16,6 +16,7 @@ public class Player : PhysicsObject {
     private bool itemOnHand = false;
     private bool hurt = false;
 
+    private int itemType;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -101,6 +102,7 @@ public class Player : PhysicsObject {
         targetVelocity = move * currentVelocity;
     }
 
+
     private void PickUp()
     {
         if (itemOnHand)
@@ -112,6 +114,8 @@ public class Player : PhysicsObject {
         Collider2D itemCollider = Physics2D.OverlapCircle(transform.position, circleRadius, layerMask);
         if (itemCollider != null)
         {
+            //itemType;
+
             //Hacer cosas referentes a coger el objeto, enviar a que el item haga algo
             itemOnHand = true;
 
