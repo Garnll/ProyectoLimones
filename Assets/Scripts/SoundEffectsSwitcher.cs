@@ -45,7 +45,12 @@ public class SoundEffectsSwitcher : MonoBehaviour {
         {
             changesCount++;
 
-            clipToPlay = (changesCount % 8) - 1;        
+            clipToPlay = (changesCount % 8) - 1;    
+            
+            if (clipToPlay < 0 || clipToPlay >= 8)
+            {
+                clipToPlay = 0;
+            }
         }
 
     }
