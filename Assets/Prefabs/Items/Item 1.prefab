@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thowForce: 700
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 1973676009438388, guid: 044231019fa0e8c43aff88191b09c65b, type: 2}
   fader: {fileID: 1396408296050756, guid: 5dcc45c573f90c74084970262ec60f52, type: 2}
   radiusMultiplicator: 0.8
   radiusMinimum: 8

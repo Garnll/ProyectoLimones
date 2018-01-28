@@ -29,6 +29,8 @@ public class Player : PhysicsObject {
     {
         currentVelocity = maxVelocity;
         hp = maxHp;
+        hurt = false;
+        dead = false;
         itemOnHand = false;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -36,7 +38,7 @@ public class Player : PhysicsObject {
 
     protected override void ComputeVelocity()
     {
-        if (dead)
+        if (dead || PauseSingleton.onPause)
         {
             return;
         }
@@ -114,7 +116,6 @@ public class Player : PhysicsObject {
 
         targetVelocity = move * currentVelocity;
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / currentVelocity);
-        Debug.Log(Mathf.Abs(velocity.x) / currentVelocity);
     }
 
     /// <summary>
@@ -123,6 +124,8 @@ public class Player : PhysicsObject {
     /// </summary>
     private void PickUp()
     {
+        if (dead)
+            return;
         if (itemOnHand)
             return;
 
@@ -174,6 +177,8 @@ public class Player : PhysicsObject {
     /// </summary>
     private void Throw()
     {
+        if (dead)
+            return;
         if (!itemOnHand)
             return;
 
@@ -225,10 +230,18 @@ public class Player : PhysicsObject {
     {
         CancelInvoke();
         dead = true;
+        PauseSingleton.onDeath = true;
+        lifeFeedback.ReachRadius(hp, maxHp);
         lifeFeedback.Noise(0f, 0f);
 
         //Aqui el jugador muere
         animator.SetBool("dead", dead);
+    }
+
+    public void FallDown()
+    {
+        hp = 0;
+        PlayerDie();
     }
 
     private void Invulnerable(Color alpha)

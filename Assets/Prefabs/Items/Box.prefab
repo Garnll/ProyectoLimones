@@ -100,12 +100,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thowForce: 300
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 1425462360620026, guid: 044231019fa0e8c43aff88191b09c65b, type: 2}
   fader: {fileID: 1396408296050756, guid: 5dcc45c573f90c74084970262ec60f52, type: 2}
   radiusMultiplicator: 2
   radiusMinimum: 13
   onUse: 0
   mass: 0
+  itemType: 3
 --- !u!212 &212812953883630182
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -67,7 +67,6 @@ public class Item : MonoBehaviour {
         }
 
         float radiusFromVelocity = rb2d.velocity.sqrMagnitude * radiusMultiplicator;
-        Debug.Log(radiusFromVelocity);
         if (radiusFromVelocity < radiusMinimum)
         {
             radiusFromVelocity = Random.Range(radiusMinimum - 1, radiusMinimum + 1);
