@@ -44,6 +44,9 @@ TagManager:
   - name: MiddleGrounds
     uniqueID: 845742673
     locked: 0
+  - name: Foreground
+    uniqueID: 3728553011
+    locked: 0
   - name: Mask
     uniqueID: 806407923
     locked: 0
