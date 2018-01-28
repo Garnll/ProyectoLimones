@@ -166,6 +166,21 @@ Prefab:
       propertyPath: m_Mass
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 61492751613021306, guid: e4441258a60f22748a3f8c5b2d6c9ae7,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 61492751613021306, guid: e4441258a60f22748a3f8c5b2d6c9ae7,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 61492751613021306, guid: e4441258a60f22748a3f8c5b2d6c9ae7,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4441258a60f22748a3f8c5b2d6c9ae7, type: 2}
   m_IsPrefabParent: 0
@@ -2296,7 +2311,7 @@ Tilemap:
       - {fileID: 21300042, guid: b05fba024310a864ebaba1bd440dcb00, type: 3}
       - {fileID: 21300044, guid: b05fba024310a864ebaba1bd440dcb00, type: 3}
       - {fileID: 21300046, guid: b05fba024310a864ebaba1bd440dcb00, type: 3}
-      m_AnimationSpeed: 7.832508
+      m_AnimationSpeed: 9.332848
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 1, y: 1, z: 0}
@@ -2316,7 +2331,7 @@ Tilemap:
       - {fileID: 21300042, guid: b05fba024310a864ebaba1bd440dcb00, type: 3}
       - {fileID: 21300044, guid: b05fba024310a864ebaba1bd440dcb00, type: 3}
       - {fileID: 21300046, guid: b05fba024310a864ebaba1bd440dcb00, type: 3}
-      m_AnimationSpeed: 9.578894
+      m_AnimationSpeed: 9.635603
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
