@@ -22,7 +22,7 @@ public class SoundEffectsSwitcher : MonoBehaviour {
         realSongAudioSource.volume = 0;
         realSongAudioSource.Play();
 
-        InvokeRepeating("RealityCheck", 1f, 0.3f);
+        InvokeRepeating("RealityCheck", 0.1f, 0.1f);
     }
 
     private void Update()
@@ -78,20 +78,20 @@ public class SoundEffectsSwitcher : MonoBehaviour {
 
     private void RealityComes()
     {
-        if (mainSongAudioSource.volume > 0.4f)
-            mainSongAudioSource.volume -= Time.deltaTime * 2;
+        if (mainSongAudioSource.volume > 0.2f)
+            mainSongAudioSource.volume -= Time.deltaTime * 3;
 
-        if (realSongAudioSource.volume < 0.3f)
-            realSongAudioSource.volume += Time.deltaTime * 2;
+        if (realSongAudioSource.volume < 0.6f)
+            realSongAudioSource.volume += Time.deltaTime * 3;
     }
 
     private void RealityFades()
     {
         if (mainSongAudioSource.volume < 1)
-            mainSongAudioSource.volume += Time.deltaTime * 2;
+            mainSongAudioSource.volume += Time.deltaTime * 3;
 
         if (realSongAudioSource.volume > 0)
-            realSongAudioSource.volume -= Time.deltaTime * 2;
+            realSongAudioSource.volume -= Time.deltaTime * 3;
     }
 
     public void PlayerDeath()
