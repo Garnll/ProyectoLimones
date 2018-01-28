@@ -26,6 +26,7 @@ public class Fader : MonoBehaviour {
         transform.localScale = Vector2.zero;
 
         InvokeRepeating("Animate", Time.deltaTime, 0.16f);
+        Destroy(gameObject, (duration * 2) + (duration * 0.5f));
     }
 
     private void Grow()

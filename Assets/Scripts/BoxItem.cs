@@ -14,6 +14,7 @@ public class BoxItem : Item {
     protected override void Start()
     {
         myCollider = GetComponent<Collider2D>();
+        myCollider.enabled = false;
 
         nowhere = new Vector3(-900, -900, -900);
 
@@ -37,6 +38,7 @@ public class BoxItem : Item {
 
     public override void Throw()
     {
+        myCollider.enabled = true;
         base.Throw();
     }
 }

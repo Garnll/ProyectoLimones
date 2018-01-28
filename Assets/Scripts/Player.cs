@@ -12,12 +12,15 @@ public class Player : PhysicsObject {
     private float jumpTakeOffSpeed = 7;
     [SerializeField]
     private LifeFeedback lifeFeedback;
+    [SerializeField]
+    private SoundEffectsSwitcher sfxSwitcher;
 
     private int hp;
     private float currentVelocity;
     private bool itemOnHand = false;
     private bool hurt = false;
     private bool dead = false;
+    private bool win = false;
 
     private ItemPool currentPoolUsed;
     private BoxItem currentBoxUsed;
@@ -31,6 +34,7 @@ public class Player : PhysicsObject {
         hp = maxHp;
         hurt = false;
         dead = false;
+        win = false;
         itemOnHand = false;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -38,8 +42,13 @@ public class Player : PhysicsObject {
 
     protected override void ComputeVelocity()
     {
-        if (dead || PauseSingleton.onPause)
+        if (dead || PauseSingleton.onPause || win)
         {
+            if (dead)
+            {
+                sfxSwitcher.PlayerDeath();
+            }
+
             return;
         }
 
@@ -195,6 +204,8 @@ public class Player : PhysicsObject {
             currentBoxUsed = null;
         }
 
+        sfxSwitcher.PlayThrow();
+
         currentVelocity = maxVelocity;
 
         itemOnHand = false;
@@ -240,8 +251,18 @@ public class Player : PhysicsObject {
 
     public void FallDown()
     {
+        if (win)
+        {
+            return;
+        }
+
         hp = 0;
         PlayerDie();
+    }
+
+    public void End()
+    {
+        win = true;
     }
 
     private void Invulnerable(Color alpha)
