@@ -1253,6 +1253,21 @@ Prefab:
       propertyPath: ShapeModule.radiusThickness
       value: 1.0000
       objectReference: {fileID: 0}
+    - target: {fileID: 198062859651574696, guid: 077ff700da72b9b41ba01353e5a9ab2f,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062859651574696, guid: 077ff700da72b9b41ba01353e5a9ab2f,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062859651574696, guid: 077ff700da72b9b41ba01353e5a9ab2f,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 077ff700da72b9b41ba01353e5a9ab2f, type: 2}
   m_IsPrefabParent: 0
@@ -40226,7 +40241,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.5, g: 0.35294116, b: 0.4837728, a: 0}
+  m_BackGroundColor: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -81254,6 +81269,21 @@ Prefab:
         type: 2}
       propertyPath: InitialModule.gravityModifier.scalar
       value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062859651574696, guid: 077ff700da72b9b41ba01353e5a9ab2f,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062859651574696, guid: 077ff700da72b9b41ba01353e5a9ab2f,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198062859651574696, guid: 077ff700da72b9b41ba01353e5a9ab2f,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 198062859651574696, guid: 077ff700da72b9b41ba01353e5a9ab2f,
         type: 2}
@@ -124176,7 +124206,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: -1
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.63235295, g: 0.4742647, b: 0.6083671, a: 1}
+  m_Color: {r: 0.56985295, g: 0.9117647, b: 0.6146552, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
