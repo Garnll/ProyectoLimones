@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 73f34dd83e4cf4a47ad60277cd8e9492
-timeCreated: 1517089038
+guid: e866f733b81e0db418043382f299f512
+timeCreated: 1517435565
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Kid_idle_0
-    21300002: Kid_idle_1
-    21300004: Kid_idle_2
-    21300006: Kid_idle_3
-    21300008: Kid_idle_4
-    21300010: Kid_idle_5
+    21300000: Kid_Idle_small_0
+    21300002: Kid_Idle_small_1
+    21300004: Kid_Idle_small_2
+    21300006: Kid_Idle_small_3
+    21300008: Kid_Idle_small_4
+    21300010: Kid_Idle_small_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -92,11 +92,21 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kid_idle_0
+      name: Kid_Idle_small_0
       rect:
         serializedVersion: 2
         x: 0
@@ -110,7 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kid_idle_1
+      name: Kid_Idle_small_1
       rect:
         serializedVersion: 2
         x: 64
@@ -124,7 +134,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kid_idle_2
+      name: Kid_Idle_small_2
       rect:
         serializedVersion: 2
         x: 128
@@ -138,7 +148,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kid_idle_3
+      name: Kid_Idle_small_3
       rect:
         serializedVersion: 2
         x: 192
@@ -152,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kid_idle_4
+      name: Kid_Idle_small_4
       rect:
         serializedVersion: 2
         x: 256
@@ -166,7 +176,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Kid_idle_5
+      name: Kid_Idle_small_5
       rect:
         serializedVersion: 2
         x: 320
