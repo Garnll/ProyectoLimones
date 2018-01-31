@@ -193,8 +193,9 @@ public class Player : PhysicsObject {
 
         //Aqui hará la animación de tirar el item
         animator.SetTrigger("throw");
+		animator.SetInteger("taking", 0);
 
-        if (currentBoxUsed == null)
+		if (currentBoxUsed == null)
         {
             currentPoolUsed.ThowItem();
         }

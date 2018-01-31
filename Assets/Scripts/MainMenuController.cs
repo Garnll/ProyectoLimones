@@ -11,7 +11,7 @@ public class MainMenuController : MonoBehaviour {
 
     public void BeginGame()
     {
-        SceneManager.LoadScene("Main Level");
+        SceneManager.LoadScene("Loading Scene");
     }
 
     public void CreditScreen()
