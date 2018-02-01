@@ -14,11 +14,11 @@ public class BoxItem : Item {
     protected override void Start()
     {
         myCollider = GetComponent<Collider2D>();
-        myCollider.enabled = false;
 
         nowhere = new Vector3(-900, -900, -900);
 
         rb2d = GetComponent<Rigidbody2D>();
+        rb2d.gravityScale = 0;
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         gameObject.SetActive(true);
@@ -26,7 +26,7 @@ public class BoxItem : Item {
 
     public override void FixedUpdate()
     {
-        //Here goes nothing
+        //Don't add anything here
     }
 
     public void GetBox()
@@ -38,7 +38,7 @@ public class BoxItem : Item {
 
     public override void Throw()
     {
-        myCollider.enabled = true;
+        rb2d.gravityScale = 1;
         base.Throw();
     }
 }

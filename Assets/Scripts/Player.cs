@@ -240,6 +240,11 @@ public class Player : PhysicsObject {
 
     private void PlayerDie()
     {
+        if (win)
+        {
+            return;
+        }
+
         CancelInvoke();
         dead = true;
         PauseSingleton.onDeath = true;

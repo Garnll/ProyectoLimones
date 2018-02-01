@@ -1,14 +1,15 @@
 fileFormatVersion: 2
-guid: ffc76e2538b3fb645929a41b5f707425
-timeCreated: 1517450797
+guid: ac13aaa5214aede4ca2a915c1e2d4a93
+timeCreated: 1517451161
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: kid_walk_medium_0
-    21300002: kid_walk_medium_1
-    21300004: kid_walk_medium_2
-    21300006: kid_walk_medium_3
-    21300008: kid_walk_medium_4
+    21300000: kid_Idle_big_0
+    21300002: kid_Idle_big_1
+    21300004: kid_Idle_big_2
+    21300006: kid_Idle_big_3
+    21300008: kid_Idle_big_4
+    21300010: kid_Idle_big_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -95,7 +96,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kid_walk_medium_0
+      name: kid_Idle_big_0
       rect:
         serializedVersion: 2
         x: 0
@@ -109,7 +110,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: kid_walk_medium_1
+      name: kid_Idle_big_1
       rect:
         serializedVersion: 2
         x: 64
@@ -123,7 +124,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: kid_walk_medium_2
+      name: kid_Idle_big_2
       rect:
         serializedVersion: 2
         x: 128
@@ -137,7 +138,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: kid_walk_medium_3
+      name: kid_Idle_big_3
       rect:
         serializedVersion: 2
         x: 192
@@ -151,10 +152,24 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: kid_walk_medium_4
+      name: kid_Idle_big_4
       rect:
         serializedVersion: 2
         x: 256
+        y: 0
+        width: 64
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kid_Idle_big_5
+      rect:
+        serializedVersion: 2
+        x: 320
         y: 0
         width: 64
         height: 128
